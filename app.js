@@ -5,7 +5,7 @@ var port = process.env.PORT || 3000;
 
 app.get('/', function (req, res) {
 
-    res.sendfile("login.html");
+    res.sendfile("https://webitcloud.net/PW/1617/ACJ/wQuizz/view/login.html");
 
 });
 
