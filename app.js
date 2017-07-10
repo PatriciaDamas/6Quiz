@@ -20,6 +20,10 @@ var connection = mysql.createConnection({
     database: 'webitclo_G504'
 });
 
+var user="";
+var jogoID="";
+var userID=0;
+
 app.get('/', function (req, res) {
 
     request('https://webitcloud.net/PW/1617/ACJ/wQuizz/view/login.html').pipe(res);
