@@ -96,6 +96,7 @@ app.get('/temas', function (req, res) {
         if (!err) {
             res.send(rows);
             console.log(rows);
+             console.log("teste");
         }
         else
             console.log('Error while performing query. ');
