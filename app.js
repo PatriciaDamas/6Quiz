@@ -39,7 +39,7 @@ app.get('/', function (req, res) {
 
 app.get('/app', function (req, res) {
 
-    res.sendFile(path.join(__dirname + '/jogo.html'));
+    res.sendFile('https://webitcloud.net/PW/1617/ACJ/wQuizz/view/jogo.html');
 
 });
 
