@@ -25,17 +25,12 @@ var user="";
 var jogoID="";
 var userID=0;
 
-// app.get('/', function (req, res) {
-
-//     request('https://webitcloud.net/PW/1617/ACJ/wQuizz/view/login.html').pipe(res);
-
-// });
-
 app.get('/', function (req, res) {
 
-     res.sendFile(path.join(__dirname + '/login.html'));
+    request('https://webitcloud.net/PW/1617/ACJ/wQuizz/view/login.html').pipe(res);
 
 });
+
 
 app.get('/app', function (req, res) {
 
