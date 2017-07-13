@@ -33,7 +33,7 @@ var userID=0;
 
 app.get('/', function (req, res) {
 
-     res.sendFile(path.join(__dirname + '/login.html'));
+     res.sendFile(path.join(__dirname + '/jogo.html'));
 
 });
 
