@@ -32,7 +32,7 @@ app.get('/', function (req, res) {
 
 app.get('/app', function (req, res) {
 
-    request('https://webitcloud.net/PW/1617/ACJ/wQuizz/view/jogo.html').pipe(res);
+    res.sendfile('jogo.html');
 
 });
 
