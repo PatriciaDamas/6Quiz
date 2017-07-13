@@ -88,7 +88,7 @@ app.post('/login', function (req, res) {
 });
 
 //Vai buscar os temas à base de dados
-app.get('/temas', function (req, res) {
+app.get('wquizz.herokuapp.com/temas', function (req, res) {
     console.log("aparece temas");
     var sql = 'SELECT nome_tema from Tema;';
     connection.query(sql, function (err, rows, fields) {
