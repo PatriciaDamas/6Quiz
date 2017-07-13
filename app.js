@@ -103,21 +103,21 @@ app.get('/temas', function (req, res) {
 });
 
 //vai buscar as perguntas à base de dados
-app.get('/perguntas', function (req, res) {
-    var tema = req.param('tema'); //nome_tema
-    var nivel = req.param('nivel'); //nivel da pergunta
-    var nAleatorio = req.param('nAleatorio'); 
-    // connection.query('SELECT * from Perguntas where dificuldade=' + nivel + ' and id_tema like (select id_tema from Tema where nome_tema=' + tema + ');', function (err, rows, fields) {
-    //     res.send(rows);
-    // });
-    var sql = "SELECT pergunta, id_pergunta, id_tipo_pergunta from Pergunta p, Tema t where p.id_tema=t.id_tema and nome_tema ='"+tema+"' and dificuldade="+nivel+" ORDER BY RAND() LIMIT "+nAleatorio+";";
-      console.log(sql);
-      connection.query(sql, function (err, rows, fields) {
+// app.get('/perguntas', function (req, res) {
+//     var tema = req.param('tema'); //nome_tema
+//     var nivel = req.param('nivel'); //nivel da pergunta
+//     var nAleatorio = req.param('nAleatorio'); 
+//     // connection.query('SELECT * from Perguntas where dificuldade=' + nivel + ' and id_tema like (select id_tema from Tema where nome_tema=' + tema + ');', function (err, rows, fields) {
+//     //     res.send(rows);
+//     // });
+//     var sql = "SELECT pergunta, id_pergunta, id_tipo_pergunta from Pergunta p, Tema t where p.id_tema=t.id_tema and nome_tema ='"+tema+"' and dificuldade="+nivel+" ORDER BY RAND() LIMIT "+nAleatorio+";";
+//       console.log(sql);
+//       connection.query(sql, function (err, rows, fields) {
       
-        res.send(rows);
-       //console.log(rows);
-    });
-});
+//         res.send(rows);
+//        //console.log(rows);
+//     });
+// });
 /*
 app.post('/jogo', function(req, res){
     var tema = req.param('tema');
@@ -131,14 +131,14 @@ app.post('/jogo', function(req, res){
     });
 });*/
 
-app.get('/respostas', function(req, res){
-    var perguntaID = req.param('perguntaID'); //id_pergunta
-    var sql='SELECT r.id_resposta, resposta, validade, p.pontuacao_pergunta from Resposta r, Pergunta_Resposta p where id_pergunta='+perguntaID+' and r.id_resposta=p.id_resposta;';
-    console.log(sql);
-    connection.query(sql, function(err, rows,fields){
-        res.send(rows);
-    });
-});
+// app.get('/respostas', function(req, res){
+//     var perguntaID = req.param('perguntaID'); //id_pergunta
+//     var sql='SELECT r.id_resposta, resposta, validade, p.pontuacao_pergunta from Resposta r, Pergunta_Resposta p where id_pergunta='+perguntaID+' and r.id_resposta=p.id_resposta;';
+//     console.log(sql);
+//     connection.query(sql, function(err, rows,fields){
+//         res.send(rows);
+//     });
+// });
 /*
 //Para trabalhar com as perguntas de tipo associacao
 app.get('/associacao', function(req, res){
