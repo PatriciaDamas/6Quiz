@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
 
 app.get('/app', function (req, res) {
 
-    res.sendFile(path.join(server1 + '/jogo.html'));
+    res.send(path.join(__dirname + '/jogo.html'));
 
 });
 
