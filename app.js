@@ -3,6 +3,7 @@ var app = express();
 var request = require('request');
 var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
+var path = require('path');
 var port = process.env.PORT || 3000;
 
 var server1 = "wquizz.herokuapp.com";
@@ -32,7 +33,7 @@ app.get('/', function (req, res) {
 
 app.get('/app', function (req, res) {
 
-    res.sendfile('jogo.html');
+    res.sendFile(path.join(server1 + '/jogo.html'));
 
 });
 
