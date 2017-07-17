@@ -3,6 +3,7 @@ var app = express();
 var request = require('request');
 var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
+var path = require('path');
 var port = process.env.PORT || 3000;
 
 var server1 = "wquizz.herokuapp.com";
@@ -30,9 +31,10 @@ app.get('/', function (req, res) {
 
 });
 
+
 app.get('/app', function (req, res) {
 
-    request('https://webitcloud.net/PW/1617/ACJ/wQuizz/view/jogo.html').pipe(res);
+    request("https://webitcloud.net/PW/1617/ACJ/wQuizz/view/jogo.html").pipe(res);
 
 });
 
@@ -96,6 +98,7 @@ app.get('/temas', function (req, res) {
         if (!err) {
             res.send(rows);
             console.log(rows);
+             console.log("teste");
         }
         else
             console.log('Error while performing query. ');
@@ -103,22 +106,30 @@ app.get('/temas', function (req, res) {
 });
 
 //vai buscar as perguntas à base de dados
-app.get('/perguntas', function (req, res) {
-    var tema = req.param('tema'); //nome_tema
-    var nivel = req.param('nivel'); //nivel da pergunta
-    var nAleatorio = req.param('nAleatorio'); 
-    // connection.query('SELECT * from Perguntas where dificuldade=' + nivel + ' and id_tema like (select id_tema from Tema where nome_tema=' + tema + ');', function (err, rows, fields) {
-    //     res.send(rows);
-    // });
-    var sql = "SELECT pergunta, id_pergunta, id_tipo_pergunta from Pergunta p, Tema t where p.id_tema=t.id_tema and nome_tema ='"+tema+"' and dificuldade="+nivel+" ORDER BY RAND() LIMIT "+nAleatorio+";";
-      console.log(sql);
-      connection.query(sql, function (err, rows, fields) {
+// app.get('/perguntas', function (req, res) {
+//     var tema = req.param('tema'); //nome_tema
+//     var nivel = req.param('nivel'); //nivel da pergunta
+//     var nAleatorio = req.param('nAleatorio'); 
+//     // connection.query('SELECT * from Perguntas where dificuldade=' + nivel + ' and id_tema like (select id_tema from Tema where nome_tema=' + tema + ');', function (err, rows, fields) {
+//     //     res.send(rows);
+//     // });
+//     var sql = "SELECT pergunta, id_pergunta, id_tipo_pergunta from Pergunta p, Tema t where p.id_tema=t.id_tema and nome_tema ='"+tema+"' and dificuldade="+nivel+" ORDER BY RAND() LIMIT "+nAleatorio+";";
+//       console.log(sql);
+//       connection.query(sql, function (err, rows, fields) {
       
+<<<<<<< HEAD
         res.send(rows);
        //console.log(rows);
     });
 });
 
+=======
+//         res.send(rows);
+//        //console.log(rows);
+//     });
+// });
+/*
+>>>>>>> 4720383b7eee6ba93ce2da29e6e3abec3e2a7e35
 app.post('/jogo', function(req, res){
     var tema = req.param('tema');
     var d = new Date();
@@ -131,14 +142,14 @@ app.post('/jogo', function(req, res){
     });
 });
 
-app.get('/respostas', function(req, res){
-    var perguntaID = req.param('perguntaID'); //id_pergunta
-    var sql='SELECT r.id_resposta, resposta, validade, p.pontuacao_pergunta from Resposta r, Pergunta_Resposta p where id_pergunta='+perguntaID+' and r.id_resposta=p.id_resposta;';
-    console.log(sql);
-    connection.query(sql, function(err, rows,fields){
-        res.send(rows);
-    });
-});
+// app.get('/respostas', function(req, res){
+//     var perguntaID = req.param('perguntaID'); //id_pergunta
+//     var sql='SELECT r.id_resposta, resposta, validade, p.pontuacao_pergunta from Resposta r, Pergunta_Resposta p where id_pergunta='+perguntaID+' and r.id_resposta=p.id_resposta;';
+//     console.log(sql);
+//     connection.query(sql, function(err, rows,fields){
+//         res.send(rows);
+//     });
+// });
 /*
 //Para trabalhar com as perguntas de tipo associacao
 app.get('/associacao', function(req, res){
