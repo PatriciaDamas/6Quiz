@@ -172,7 +172,7 @@ app.get('/rankingTema', function(req, res){
 
 app.get('/ranking', function(req, res){
     //nome utilizador, tema, pontuação
-    var sql="SELECT nome_utilizador, pontuação_utilizador, nome_jogo from Utilizador u, Jogo j, Utilizador_Jogo uj where j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuação_utilizador desc;";
+    var sql="SELECT nome_utilizador, pontuacao_utilizador, nome_jogo from Utilizador u, Jogo j, Utilizador_Jogo uj where j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuacao_utilizador desc;";
     connection.query(sql, function(err, rows,fields){
         res.send(rows);
     });
