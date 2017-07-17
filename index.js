@@ -64,7 +64,7 @@ $(document).ready(function () {
             type: "POST",
             url: "https://wquizz.herokuapp.com/login?user1=" + user1 + "&passeUser=" + passeUser,
             contentType: "application/json"
-        }).done(function (data) {
+        });/*.done(function (data) {
             console.log(data);
             if (data === undefined) {
                 console.log("erro");
@@ -74,10 +74,10 @@ $(document).ready(function () {
                 location.href ='https://wquizz.herokuapp.com/app';
 
                 /*$("html").html(perguntas.html);
-                $("body").html(perguntas.html);*/
+                $("body").html(perguntas.html);
                 console.log("sucesso");
             }
-        });
+        });*/
     });
 
 
