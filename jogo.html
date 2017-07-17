@@ -1,148 +1,295 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<title>SixQuiz</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!--<link rel="stylesheet" type="text/css" href="https://webitcloud.net/PW/1617/ACJ/Projecto/wQuizz/script2.css">-->
-	<!--<script src="https://webitcloud.net/PW/1617/ACJ/Projecto/wQuizz/login.js"></script>-->
-
-	<!--teste-->
-	<link rel="stylesheet" type="text/css" href="https://webitcloud.net/PW/1617/ACJ/wQuizz/css6quiz/script2.css">
-
-	<!--meter o webitcloud-->
-	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/jogo.js"></script>
-	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/nos.js"></script>
-	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/inicial.js"></script>
-	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/index.js"></script>
-	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/ranking.js"></script>
-	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/sair.js"></script>
-
-	<link rel="icon" href="https://webitcloud.net/PW/1617/ACJ/wQuizz/imagens6quiz/logoP.png" type="image/x-icon">
-
-
-</head>
-
-<body>
-
-
-	<!-- Sidebar -->
-	<div id="sidebar-wrapper">
-		<ul class="sidebar-nav">
-
-			<li class="sidebar-brand" id="menuBarra">
-				<a href="#" id="menu-toggle2"><span class="glyphicon glyphicon-remove" id="cruz" style="color:#FFFFFF; font-size: 40px"></a>
-			</li>
-
-
-			<li id="inicial">
-				<a href="#" id="btnInicial">Página Inicial</a>
-			</li>
-			<li id="ranking">
-				<a href="#" id="btnRanking">Ranking</a>
-			</li>
-			<li id="sobre">
-                <a href="#" id="btnSobre">Sobre</a>
-            </li>
-           <!-- <li>
-                <a href="#">Events</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>-->
-			<li id="sair">
-				<a href="#" id="btnSair">Sair</a>
-				
-			</li>
-		</ul>
-	</div>
-	<nav class="navbar navbar-default" id="nav2">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">
-					<img src="https://webitcloud.net/PW/1617/ACJ/wQuizz/imagens6quiz/logoB.png" id="logo2">
-                      <!--<img src="imagens/logoA.png" class="img-responsive" id="logo2">-->
-				</a>
-			</div>
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" style="color:#FFFFFF; font-size: 30px"></span></a>
-				</li>
-			</ul>
-			<!--<img src="imagens/user-male-shape-in-a-circle-ios-7-interface-symbol_318-35357.jpg" alt="user" id="user">-->
-		</div>
-	</nav>
-
-	<div class="container-fluid">
-		<div class="row" id="div_tipoJogo2">
-			<div class="col-sm-2 ">
-			</div>
-			<div class="col-sm-8 ">
-				
-				<h3 id="tipoJogo">Tipo de Jogo</h3>
-				<br>
-				<br>
-				<br>
-			</div>
-			<div class="col-sm-2 ">
-			</div>
-		</div>
-
-	</div>
-
-	<div class="container-fluid">
-		<div class="row" id="div_tipoJogo">
-			<div class="col-sm-3 ">
-			</div>
-			<div class="col-sm-3">
-
-				<center> <button type="button" class="btn" id="single"> <p><span class="glyphicon glyphicon-user" id="gly_user"></span> </p></button></center>
-				<br>
-               
-			</div>
-			<div class="col-sm-3 ">
-
-				<center> <button type="button" class="btn" id="multi"><p><span class="glyphicon glyphicon-group" id="gly_user2"></span></p></button>
-					<center>
-			</div>
-			<div class="col-sm-3 ">
-			</div>
-		</div>
-
-	</div>
-
-	<div class="container-fluid">
-		<div class="row" id="div_tipoJogo3">
-            <div class="col-sm-12 ">
-			</div>
-		</div>
-
-	</div>
-
-
-	<!-- Menu Toggle Script -->
-	<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("toggled");
-    });
-    $("#menu-toggle2").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("toggled");
-    });
-
-    
-     
-
-    </script>
-</body>
-
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>SixQuiz</title>
+
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!--<link rel="stylesheet" type="text/css" href="https://webitcloud.net/PW/1617/ACJ/Projecto/wQuizz/script2.css">-->
+
+	<!--<script src="https://webitcloud.net/PW/1617/ACJ/Projecto/wQuizz/login.js"></script>-->
+
+
+
+	<!--teste-->
+
+	<link rel="stylesheet" type="text/css" href="https://webitcloud.net/PW/1617/ACJ/wQuizz/css6quiz/script2.css">
+
+
+
+	<!--meter o webitcloud-->
+
+	<script src="https://github.com/ESMADIPP/sixQuizz/blob/bef36f200a7806cc14f934bc5be8f89a8fa677ee/jogo.js"></script>
+
+	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/nos.js"></script>
+
+	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/inicial.js"></script>
+
+	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/index.js"></script>
+
+	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/ranking.js"></script>
+
+	<script src="https://webitcloud.net/PW/1617/ACJ/wQuizz/view/sair.js"></script>
+
+
+
+	<link rel="icon" href="https://webitcloud.net/PW/1617/ACJ/wQuizz/imagens6quiz/logoP.png" type="image/x-icon">
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+	<!-- Sidebar -->
+
+	<div id="sidebar-wrapper">
+
+		<ul class="sidebar-nav">
+
+
+
+			<li class="sidebar-brand" id="menuBarra">
+
+				<a href="#" id="menu-toggle2"><span class="glyphicon glyphicon-remove" id="cruz" style="color:#FFFFFF; font-size: 40px"></a>
+
+			</li>
+
+
+
+
+
+			<li id="inicial">
+
+				<a href="#" id="btnInicial">Página Inicial</a>
+
+			</li>
+
+			<li id="ranking">
+
+				<a href="#" id="btnRanking">Ranking</a>
+
+			</li>
+
+			<li id="sobre">
+
+                <a href="#" id="btnSobre">Sobre</a>
+
+            </li>
+
+           <!-- <li>
+
+                <a href="#">Events</a>
+
+            </li>
+
+            <li>
+
+                <a href="#">About</a>
+
+            </li>
+
+            <li>
+
+                <a href="#">Services</a>
+
+            </li>-->
+
+			<li id="sair">
+
+				<a href="#" id="btnSair">Sair</a>
+
+				
+
+			</li>
+
+		</ul>
+
+	</div>
+
+	<nav class="navbar navbar-default" id="nav2">
+
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+
+				<a class="navbar-brand" href="#">
+
+					<img src="https://webitcloud.net/PW/1617/ACJ/wQuizz/imagens6quiz/logoB.png" id="logo2">
+
+                      <!--<img src="imagens/logoA.png" class="img-responsive" id="logo2">-->
+
+				</a>
+
+			</div>
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<li>
+
+					<a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" style="color:#FFFFFF; font-size: 30px"></span></a>
+
+				</li>
+
+			</ul>
+
+			<!--<img src="imagens/user-male-shape-in-a-circle-ios-7-interface-symbol_318-35357.jpg" alt="user" id="user">-->
+
+		</div>
+
+	</nav>
+
+
+
+	<div class="container-fluid">
+
+		<div class="row" id="div_tipoJogo2">
+
+			<div class="col-sm-2 ">
+
+			</div>
+
+			<div class="col-sm-8 ">
+
+				
+
+				<h3 id="tipoJogo">Tipo de Jogo</h3>
+
+				<br>
+
+				<br>
+
+				<br>
+
+			</div>
+
+			<div class="col-sm-2 ">
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+
+
+	<div class="container-fluid">
+
+		<div class="row" id="div_tipoJogo">
+
+			<div class="col-sm-3 ">
+
+			</div>
+
+			<div class="col-sm-3">
+
+
+
+				<center> <button type="button" class="btn" id="single"> <p><span class="glyphicon glyphicon-user" id="gly_user"></span> </p></button></center>
+
+				<br>
+
+               
+
+			</div>
+
+			<div class="col-sm-3 ">
+
+
+
+				<center> <button type="button" class="btn" id="multi"><p><span class="glyphicon glyphicon-group" id="gly_user2"></span></p></button>
+
+					<center>
+
+			</div>
+
+			<div class="col-sm-3 ">
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+
+
+	<div class="container-fluid">
+
+		<div class="row" id="div_tipoJogo3">
+
+            <div class="col-sm-12 ">
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+	<!-- Menu Toggle Script -->
+
+	<script>
+
+    $("#menu-toggle").click(function(e) {
+
+        e.preventDefault();
+
+        $("#sidebar-wrapper").toggleClass("toggled");
+
+    });
+
+    $("#menu-toggle2").click(function(e) {
+
+        e.preventDefault();
+
+        $("#sidebar-wrapper").toggleClass("toggled");
+
+    });
+
+
+
+    
+
+     
+
+
+
+    </script>
+
+</body>
+
+
+
 </html>
