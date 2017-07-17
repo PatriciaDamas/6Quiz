@@ -118,18 +118,18 @@ app.get('/perguntas', function (req, res) {
        //console.log(rows);
     });
 });
-/*
+
 app.post('/jogo', function(req, res){
     var tema = req.param('tema');
     var d = new Date();
     var n = d.getTime();
     jogoID=tema+n;
-    var sql = 'insert into Jogo (id_jogo, nome_jogo) values('+jogo+','+tema+');';
+    var sql = "insert into Jogo (id_jogo, nome_jogo) values('"+jogo+"','"+tema+"');";
     console.log(sql);
     connection.query(sql, function(err,rows,fields){
         
     });
-});*/
+});
 
 app.get('/respostas', function(req, res){
     var perguntaID = req.param('perguntaID'); //id_pergunta
@@ -146,12 +146,13 @@ app.get('/associacao', function(req, res){
     connection.query('SELECT * from Perguntas where associacao='+pergunta+');', function(err, rows,fields){
         res.send(rows);
     });
-});
+});*/
 
 //adiciona a pontuação de um utilizador num determinado jogo à BD
 app.post('/pontuacao', function(req,res){
     var pontos = req.param('pontos');
-    connection.query('Insert into utilizador_jogo (id_utilizador, id_jogo, pontuacao_utilizador) values ('+userID+',"'+jogoID+'"'+pontos+');',function(err,rows,fields){
+    var sql ="Insert into Utilizador_Jogo (id_utilizador, id_jogo, pontuacao_utilizador) values ("+userID+",'"+jogoID+"',"+pontos+");";
+    connection.query(sql,function(err,rows,fields){
         
     });
 });
@@ -159,16 +160,18 @@ app.post('/pontuacao', function(req,res){
 app.get('/rankingTema', function(req, res){
     var tema = req.param('tema');
     //nome utilizador, tema, pontuação
-    connection.query('SELECT nome_utilizador, pontuação_utilizador, j.nome_tema from Tema t, Utilizador u, Jogo j, Utilizador_Jogo uj where nome_tema="'+tema+'" and j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuação_utilizador desc;', function(err, rows,fields){
+    var sql="SELECT nome_utilizador, pontuação_utilizador, j.nome_tema from Utilizador u, Jogo j, Utilizador_Jogo uj where nome_jogo='"+tema+"' and j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuação_utilizador desc;"
+    connection.query(sql, function(err, rows,fields){
         res.send(rows);
     });
 });
 
 app.get('/ranking', function(req, res){
     //nome utilizador, tema, pontuação
-    connection.query('SELECT nome_utilizador, pontuação_utilizador, nome_jogo from Utilizador u, Jogo j, Utilizador_Jogo uj where j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuação_utilizador desc;', function(err, rows,fields){
+    var sql="SELECT nome_utilizador, pontuação_utilizador, nome_jogo from Utilizador u, Jogo j, Utilizador_Jogo uj where j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuação_utilizador desc;";
+    connection.query(sql, function(err, rows,fields){
         res.send(rows);
     });
-});*/
+});
 
 app.listen(port);
