@@ -164,7 +164,7 @@ app.post('/pontuacao', function(req,res){
 app.get('/rankingTema', function(req, res){
     var tema = req.param('tema');
     //nome utilizador, tema, pontuação
-    var sql="SELECT nome_utilizador, pontuação_utilizador, j.nome_jogo from Utilizador u, Jogo j, Utilizador_Jogo uj where nome_jogo='"+tema+"' and j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuação_utilizador desc;"
+    var sql="SELECT nome_utilizador, pontuacao_utilizador, j.nome_jogo from Utilizador u, Jogo j, Utilizador_Jogo uj where nome_jogo='"+tema+"' and j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuacao_utilizador desc;"
     connection.query(sql, function(err, rows,fields){
         res.send(rows);
     });
