@@ -1,4 +1,4 @@
-// var urlc = "http://localhost:3000/"
+var urlc = "https://wquizz.herokuapp.com/"
 
 //tempo
 function Countdown(options) {
@@ -109,7 +109,7 @@ $(document).ready(function () {
                     var respostas = '<div class="row" id="div_resp">';
                     $.ajax({
                         type: "POST",
-                        url: "/jogo?tema=" + idObj,
+                        url: urlc + "jogo?tema=" + idObj,
                         contentType: "application/json"
                     });
                     //perguntas
@@ -119,7 +119,7 @@ $(document).ready(function () {
                         console.log("n" + n);
                         $.ajax({
                             type: "GET",
-                            url: "/perguntas?tema=" + idObj + "&nivel=" + n + "&nAleatorio=" + 6,
+                            url: urlc + "perguntas?tema=" + idObj + "&nivel=" + n + "&nAleatorio=" + 6,
                             contentType: "application/json"
                         }).done(function (data) {
 
@@ -152,7 +152,7 @@ $(document).ready(function () {
                                 //respostas
                                 $.ajax({
                                     type: "GET",
-                                    url: "/respostas?perguntaID=" + perguntasID,
+                                    url: urlc + "respostas?perguntaID=" + perguntasID,
                                     contentType: "application/json"
                                 }).done(function (data) {
                                     console.log("hh" + data);
@@ -280,7 +280,7 @@ $(document).ready(function () {
 
                                             $.ajax({
                                                 ype: "POST",
-                                                url: "/pontucao?pontos=" + pontuacaoJoagador,
+                                                url: urlc+"pontucao?pontos=" + pontuacaoJoagador,
                                                 contentType: "application/json"
                                             });
                                             //location.href = 'perguntas.html';

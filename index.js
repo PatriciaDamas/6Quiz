@@ -26,7 +26,7 @@ $(document).ready(function () {
                 console.log("true")
                 $.ajax({
                     type: "GET",
-                    url: "/registo?nome=" + nome + "&passe=" + passe + "&email=" + email,
+                    url: "https://wquizz.herokuapp.com/registo?nome=" + nome + "&passe=" + passe + "&email=" + email,
                     contentType: "application/json"
                 });
                 //informar que registo foi efetuado com sucesso
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: "/login?user1=" + user1 + "&passeUser=" + passeUser,
+            url: "https://wquizz.herokuapp.com/login?user1=" + user1 + "&passeUser=" + passeUser,
             contentType: "application/json"
         }).done(function (data) {
             console.log(data);

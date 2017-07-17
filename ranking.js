@@ -6,7 +6,7 @@ $(document).ready(function () {
         $("#div_tipoJogo2").append(" <div class='row'><div class='col-sm-2'></div><div class='col-sm-8'><br><br><br><h3 id='tema_Jogo'>Ranking:</h3><br></div><div class='col-sm-2'></div></div>");
         $.ajax({
             type: "GET",
-            url: "/temas",
+            url: "https://wquizz.herokuapp.com/temas",
             contentType: "application/json"
         }).done(function (data) {
             console.log("entrei");
@@ -27,7 +27,7 @@ $(document).ready(function () {
         console.log(tema);
         $.ajax({
             type: "GET",
-            url: "/ranking",
+            url: "https://wquizz.herokuapp.com/ranking",
             contentType: "application/json"
         }).done(function (data) {
             var content = '<div class="row"><div class="col-sm-2"></div><div class="col-sm-8"><table class="table table-hover" id="table_ranking"><thead ><tr><th>Posição</th><th>Nome</th><th>Pontuação</th><th>Jogo</th></tr></thead><tbody>'
