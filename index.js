@@ -71,7 +71,7 @@ $(document).ready(function () {
             }
             else {
 
-                window.open('https://wquizz.herokuapp.com/app');
+                location.href ='https://wquizz.herokuapp.com/app';
 
                 /*$("html").html(perguntas.html);
                 $("body").html(perguntas.html);*/
