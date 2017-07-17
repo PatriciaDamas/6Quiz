@@ -70,7 +70,8 @@ $(document).ready(function () {
                 console.log("erro");
             }
             else {
-                location.href = 'https://webitcloud.net/PW/1617/ACJ/wQuizz/view/jogo.html';
+                location.href = 'https://wquizz.herokuapp.com/app';
+                
                 /*$("html").html(perguntas.html);
                 $("body").html(perguntas.html);*/
                 console.log("sucesso");
