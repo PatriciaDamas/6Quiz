@@ -51,7 +51,7 @@ $(document).ready(function () {
     });
 
     $("#btnLogin").click(function () {
-        console.log("entrei");
+       // console.log("entrei");
 
         var user1 = $("#user1").val();
         var passeUser = $("#pwd1").val();

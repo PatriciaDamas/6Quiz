@@ -66,14 +66,15 @@ app.post('/login', function (req, res) {
     var sql = "SELECT * FROM Utilizador WHERE email like '" + user1 + "' and password like'" + passeUser + "';"
     //console.log(sql);
     connection.query(sql, function (err, rows, fields) {
-        console.log(rows);
+        console.log(rows.length);
         if (!err) {
             if (rows[0] === undefined) {
                 res.send("Erro no email ou password");
                 console.log("erro");
                 //res.send("erro");
             }
-            else if (rows.lenght == 1) {
+            else if (rows.lenght === 1) {
+                
                 userID = rows[0].id_utilizador;
                 //res.setHeader("User", userID);
                 req.session.user1 = rows[0].email;
@@ -82,7 +83,7 @@ app.post('/login', function (req, res) {
                 console.log("uID=" + userID);
                 res.status(200).send("Sucessos");
                 console.log("sucesso");
-                res.send("sucesso");
+                //res.send("sucesso");
                 res.redirect("/app");
                 //return;
             }
