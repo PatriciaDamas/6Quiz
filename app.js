@@ -194,4 +194,8 @@ app.get('/ranking', function (req, res) {
     console.log(userID);
 });*/
 
+app.get('/inicial', function(req,res){
+    res.redirect("/app");
+});
+
 app.listen(port);
