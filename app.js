@@ -145,7 +145,7 @@ app.get('/jogo', function (req, res) {
 
 app.get('/respostas', function (req, res) {
     var perguntaID = req.param('perguntaID'); //id_pergunta
-    var sql = 'SELECT r.id_resposta, resposta, validade, p.pontuacao_pergunta from Resposta r, Pergunta_Resposta p where id_pergunta=' + perguntaID + ' and r.id_resposta=p.id_resposta;';
+    var sql = 'SELECT r.id_resposta, resposta, validade, p.pontuacao_pergunta from Resposta r, Pergunta_Resposta p where id_pergunta=' + perguntaID + ' and r.id_resposta=p.id_resposta ORDER BY RAND();';
     console.log(sql);
     connection.query(sql, function (err, rows, fields) {
         res.send(rows);

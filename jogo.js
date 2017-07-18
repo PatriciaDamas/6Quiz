@@ -144,11 +144,13 @@ $(document).ready(function () {
                                 /*if (tipoPergunta == 3) {
                                         $.ajax({
                                                 type: "GET",
-                                                url: urlc + "respostas?perguntaID=" + perguntasID,
+                                                url: urlc + "associacao?id=" + perguntasID,
                                                 contentType: "application/json"
                                         }).done(function (data) {
+                                            //ir colocar as perguntas em html e ir buscar as respectivas respostas
                                         });
-                                }*/
+                                }
+                                else{*/
                                 //respostas
                                 $.ajax({
                                     type: "GET",
@@ -176,14 +178,7 @@ $(document).ready(function () {
                                             respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
                                         }/*
                                         //Verdadeiro ou falso
-                                        if (tipoPergunta == 2) {
-                                                if (data.validade == 1) {
-                                                        validade[v] = data.id_resposta;
-                                                        v++;
-                                                }
-                                        }
-                                        //Associação
-                                        if (tipoPergunta == 3) {
+                                        else if (tipoPergunta == 2) {
 
                                         }
                                         //Imagens
