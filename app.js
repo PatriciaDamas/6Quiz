@@ -161,7 +161,7 @@ app.get('/associacao', function(req, res){
 });*/
 
 //adiciona a pontuação de um utilizador num determinado jogo à BD
-app.post('/pontuacao', function (req, res) {
+app.get('/pontuacao', function (req, res) {
     var pontos = req.param('pontos');
     var sql = "Insert into Utilizador_Jogo (id_utilizador, id_jogo, pontuacao_utilizador) values (" + userID + ",'" + jogoID + "'," + pontos + ");";
     connection.query(sql, function (err, rows, fields) {

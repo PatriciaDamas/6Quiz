@@ -279,7 +279,7 @@ $(document).ready(function () {
                                             //tempo = 0;
 
                                             $.ajax({
-                                                ype: "POST",
+                                                ype: "GET",
                                                 url: urlc+"pontucao?pontos=" + pontuacaoJoagador,
                                                 contentType: "application/json"
                                             });
