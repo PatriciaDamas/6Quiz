@@ -21,9 +21,9 @@ var connection = mysql.createConnection({
     database: 'webitclo_G504'
 });
 
-var user="";
-var jogoID="";
-var userID=0;
+var user = "";
+var jogoID = "";
+var userID = 0;
 
 app.get('/', function (req, res) {
 
@@ -61,33 +61,37 @@ app.get('/registo', function (req, res) {
 app.post('/login', function (req, res) {
     var user1 = req.param('user1');
     var passeUser = req.param('passeUser');
-    console.log(user1)
+    //console.log(user1)
     //var sql = "SELECT EXISTS(SELECT * FROM Utilizador WHERE nome_utilizador like '" + user1+"');";
     var sql = "SELECT * FROM Utilizador WHERE email like '" + user1 + "' and password like'" + passeUser + "';"
-    console.log(sql);
+    //console.log(sql);
     connection.query(sql, function (err, rows, fields) {
         console.log(rows);
         if (!err) {
             if (rows[0] === undefined) {
-                res.status(500).send("Erro no email ou password");
+                res.status(404).send("Erro no email ou password");
                 console.log("erro");
                 //res.send("erro");
-            } else {
-                userID=rows[0].id_utilizador;
+            }
+            else if (rows.lenght == 1) {
+                userID = rows[0].id_utilizador;
                 //res.setHeader("User", userID);
                 req.session.user1 = rows[0].email;
                 req.session.passeUser = rows[0].password;
                 user = rows[0].email;
-                console.log("uID="+userID);
+                console.log("uID=" + userID);
                 res.status(200).send("Sucessos");
                 console.log("sucesso");
                 res.send("sucesso");
                 res.redirect("/app");
                 return;
             }
+            else {
+                res.status(304).send("Erro no email ou password");
+            }
         }
         else {
-            res.status(500).send("Serviço indisponivel");
+            res.status(404).send("Serviço indisponivel");
         }
     });
 });
@@ -101,7 +105,7 @@ app.get('/temas', function (req, res) {
         if (!err) {
             res.send(rows);
             //console.log(rows);
-             //console.log("teste");
+            //console.log("teste");
         }
         else
             console.log('Error while performing query. ');
@@ -109,43 +113,43 @@ app.get('/temas', function (req, res) {
 });
 
 //vai buscar as perguntas à base de dados
- app.get('/perguntas', function (req, res) {
-     var tema = req.param('tema'); //nome_tema
+app.get('/perguntas', function (req, res) {
+    var tema = req.param('tema'); //nome_tema
     var nivel = req.param('nivel'); //nivel da pergunta
-     var nAleatorio = req.param('nAleatorio'); 
-//     // connection.query('SELECT * from Perguntas where dificuldade=' + nivel + ' and id_tema like (select id_tema from Tema where nome_tema=' + tema + ');', function (err, rows, fields) {
-//     //     res.send(rows);
-//     // });
-   var sql = "SELECT pergunta, id_pergunta, id_tipo_pergunta from Pergunta p, Tema t where p.id_tema=t.id_tema and nome_tema ='"+tema+"' and dificuldade="+nivel+" ORDER BY RAND() LIMIT "+nAleatorio+";";
-      console.log(sql);
-      connection.query(sql, function (err, rows, fields) {
-      
+    var nAleatorio = req.param('nAleatorio');
+    //     // connection.query('SELECT * from Perguntas where dificuldade=' + nivel + ' and id_tema like (select id_tema from Tema where nome_tema=' + tema + ');', function (err, rows, fields) {
+    //     //     res.send(rows);
+    //     // });
+    var sql = "SELECT pergunta, id_pergunta, id_tipo_pergunta from Pergunta p, Tema t where p.id_tema=t.id_tema and nome_tema ='" + tema + "' and dificuldade=" + nivel + " ORDER BY RAND() LIMIT " + nAleatorio + ";";
+    console.log(sql);
+    connection.query(sql, function (err, rows, fields) {
+
         res.send(rows);
-       //console.log(rows);
+        //console.log(rows);
     });
 });
 
 
-app.post('/jogo', function(req, res){
+app.post('/jogo', function (req, res) {
     var tema = req.param('tema');
     var d = new Date();
     var n = d.getTime();
-    jogoID=tema+n;
-    var sql = "insert into Jogo (id_jogo, nome_jogo) values('"+jogo+"','"+tema+"');";
+    jogoID = tema + n;
+    var sql = "insert into Jogo (id_jogo, nome_jogo) values('" + jogo + "','" + tema + "');";
     console.log(sql);
-    connection.query(sql, function(err,rows,fields){
-        
+    connection.query(sql, function (err, rows, fields) {
+
     });
 });
 
- app.get('/respostas', function(req, res){
+app.get('/respostas', function (req, res) {
     var perguntaID = req.param('perguntaID'); //id_pergunta
-    var sql='SELECT r.id_resposta, resposta, validade, p.pontuacao_pergunta from Resposta r, Pergunta_Resposta p where id_pergunta='+perguntaID+' and r.id_resposta=p.id_resposta;';
-     console.log(sql);
-     connection.query(sql, function(err, rows,fields){
-         res.send(rows);
-     });
- });
+    var sql = 'SELECT r.id_resposta, resposta, validade, p.pontuacao_pergunta from Resposta r, Pergunta_Resposta p where id_pergunta=' + perguntaID + ' and r.id_resposta=p.id_resposta;';
+    console.log(sql);
+    connection.query(sql, function (err, rows, fields) {
+        res.send(rows);
+    });
+});
 /*
 //Para trabalhar com as perguntas de tipo associacao
 app.get('/associacao', function(req, res){
@@ -156,27 +160,27 @@ app.get('/associacao', function(req, res){
 });*/
 
 //adiciona a pontuação de um utilizador num determinado jogo à BD
-app.post('/pontuacao', function(req,res){
+app.post('/pontuacao', function (req, res) {
     var pontos = req.param('pontos');
-    var sql ="Insert into Utilizador_Jogo (id_utilizador, id_jogo, pontuacao_utilizador) values ("+userID+",'"+jogoID+"',"+pontos+");";
-    connection.query(sql,function(err,rows,fields){
-        
+    var sql = "Insert into Utilizador_Jogo (id_utilizador, id_jogo, pontuacao_utilizador) values (" + userID + ",'" + jogoID + "'," + pontos + ");";
+    connection.query(sql, function (err, rows, fields) {
+
     });
 });
 
-app.get('/rankingTema', function(req, res){
+app.get('/rankingTema', function (req, res) {
     var tema = req.param('tema');
     //nome utilizador, tema, pontuação
-    var sql="SELECT nome_utilizador, pontuacao_utilizador, j.nome_jogo from Utilizador u, Jogo j, Utilizador_Jogo uj where nome_jogo='"+tema+"' and j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuacao_utilizador desc;"
-    connection.query(sql, function(err, rows,fields){
+    var sql = "SELECT nome_utilizador, pontuacao_utilizador, j.nome_jogo from Utilizador u, Jogo j, Utilizador_Jogo uj where nome_jogo='" + tema + "' and j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuacao_utilizador desc;"
+    connection.query(sql, function (err, rows, fields) {
         res.send(rows);
     });
 });
 
-app.get('/ranking', function(req, res){
+app.get('/ranking', function (req, res) {
     //nome utilizador, tema, pontuação
-    var sql="SELECT nome_utilizador, pontuacao_utilizador, nome_jogo from Utilizador u, Jogo j, Utilizador_Jogo uj where j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuacao_utilizador desc;";
-    connection.query(sql, function(err, rows,fields){
+    var sql = "SELECT nome_utilizador, pontuacao_utilizador, nome_jogo from Utilizador u, Jogo j, Utilizador_Jogo uj where j.id_jogo=uj.id_jogo and u.id_utilizador=uj.id_utilizador order by pontuacao_utilizador desc;";
+    connection.query(sql, function (err, rows, fields) {
         res.send(rows);
     });
 });
