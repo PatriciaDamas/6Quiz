@@ -69,7 +69,7 @@ app.post('/login', function (req, res) {
         console.log(rows);
         if (!err) {
             if (rows[0] === undefined) {
-                res.status(404).send("Erro no email ou password");
+                res.send("Erro no email ou password");
                 console.log("erro");
                 //res.send("erro");
             }
@@ -87,11 +87,11 @@ app.post('/login', function (req, res) {
                 return;
             }
             else {
-                res.status(304).send("Erro no email ou password");
+                res.send("Erro no email ou password2");
             }
         }
         else {
-            res.status(404).send("Serviço indisponivel");
+            res.send("Serviço indisponivel");
         }
     });
 });
