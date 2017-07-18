@@ -83,6 +83,7 @@ app.post('/login', function (req, res) {
                 console.log("sucesso");
                 res.send("sucesso");
                 res.redirect("/app");
+                return;
             }
         }
         else {
