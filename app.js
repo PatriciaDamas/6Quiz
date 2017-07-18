@@ -184,6 +184,7 @@ app.get('/logout', function(req, res){
     req.session = null;
     req.session.destroy();
     res.redirect("/");
+    console.log(userID);
 });
 
 app.listen(port);
