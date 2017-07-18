@@ -73,9 +73,10 @@ app.post('/login', function (req, res) {
                 console.log("erro");
                 //res.send("erro");
             } else {
+                userID=rows[0].id_utilizador;
+                res.setHeader("User", userID);
                 req.session.user1 = rows[0].email;
                 req.session.passeUser = rows[0].password;
-                userID=rows[0].id_utilizador;
                 user = rows[0].email;
                 console.log("uID="+userID);
                 res.status(200).send("Sucessos");
