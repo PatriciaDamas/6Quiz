@@ -5,7 +5,7 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
             url: "https://wquizz.herokuapp.com/app",
-            contentType: "application/json"
+            //contentType: "application/json"
         });
     });
 
