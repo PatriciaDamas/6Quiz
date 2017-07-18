@@ -108,7 +108,7 @@ $(document).ready(function () {
                     $("#div_tipoJogo3").append(bar);
                     var respostas = '<div class="row" id="div_resp">';
                     $.ajax({
-                        type: "POST",
+                        type: "GET",
                         url: urlc + "jogo?tema=" + idObj,
                         contentType: "application/json"
                     });

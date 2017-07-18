@@ -131,7 +131,7 @@ app.get('/perguntas', function (req, res) {
 });
 
 
-app.post('/jogo', function (req, res) {
+app.get('/jogo', function (req, res) {
     var tema = req.param('tema');
     var d = new Date();
     var n = d.getTime();
