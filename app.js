@@ -179,4 +179,10 @@ app.get('/ranking', function(req, res){
     });
 });
 
+app.get('/logout', function(req, res){
+    userID=0;
+    req.session = null;
+    res.redirect("/");
+});
+
 app.listen(port);
