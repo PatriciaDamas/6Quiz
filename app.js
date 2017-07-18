@@ -74,7 +74,7 @@ app.post('/login', function (req, res) {
                 //res.send("erro");
             } else {
                 userID=rows[0].id_utilizador;
-                res.setHeader("User", userID);
+                //res.setHeader("User", userID);
                 req.session.user1 = rows[0].email;
                 req.session.passeUser = rows[0].password;
                 user = rows[0].email;
