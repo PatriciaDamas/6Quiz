@@ -157,10 +157,10 @@ $(document).ready(function () {
                                 }).done(function (data) {
                                     console.log("hh" + data);
                                     $.each(data, function (key, data) {
-                                        console.log("hh2");
+                                        //console.log("hh2");
 
                                         var idR = data.id_resposta;
-                                        console.log("b<dhfgh" + idR)
+                                        //console.log("b<dhfgh" + idR)
                                         if (data.validade == 1) {
                                             validade[v] = idR;
                                             console.log('v ' + validade[v]);
@@ -169,14 +169,12 @@ $(document).ready(function () {
                                             v++;
                                         }
                                         nomesDiv[r] = idR;
-                                        console.log("dsf" + nomesDiv[r]);
+                                        //console.log("dsf" + nomesDiv[r]);
                                         //Escolha múltipla
-                                        /*if (tipoPergunta == 1) {
-                                                if (data.validade == 1) {
-                                                        validade[v] = data.id_resposta;
-                                                        v++;
-                                                }
-                                        }
+                                        if (tipoPergunta == 1) {
+                                            console.log("Escolha multipla");
+                                            respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
+                                        }/*
                                         //Verdadeiro ou falso
                                         if (tipoPergunta == 2) {
                                                 if (data.validade == 1) {
@@ -204,7 +202,7 @@ $(document).ready(function () {
 
                                         //r++;
 
-                                        contTeste++;
+                                        /*contTeste++;
                                         console.log(" cont: " + contTeste);
                                         if (contTeste == 1 || contTeste == 4 || contTeste == 5 || contTeste == 7 || contTeste == 10 || contTeste == 11 || contTeste == 13 || contTeste == 16 || contTeste == 17 || contTeste == 19 || contTeste == 22 || contTeste == 23 || contTeste == 25 || contTeste == 28 || contTeste == 29 || contTeste == 31 || contTeste == 34 || contTeste == 35 || contTeste == 37 || contTeste == 40 || contTeste == 41) {
                                             respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
@@ -214,7 +212,7 @@ $(document).ready(function () {
                                         else {
                                             respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta2">' + data.resposta + '</button></div></center></div>';
 
-                                        }
+                                        }*/
 
                                         r++;
                                     });
