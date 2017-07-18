@@ -1,6 +1,7 @@
 $(document).ready(function () {
     
     $("#btnRanking").click(function () {
+        //falta filtar
         $("#div_tipoJogo").empty();
         $("#div_tipoJogo2").empty();
         $("#div_tipoJogo2").append(" <div class='row'><div class='col-sm-2'></div><div class='col-sm-8'><br><br><br><h3 id='tema_Jogo'>Ranking:</h3><br></div><div class='col-sm-2'></div></div>");
