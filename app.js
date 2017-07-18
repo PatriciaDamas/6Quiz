@@ -84,7 +84,7 @@ app.post('/login', function (req, res) {
                 console.log("sucesso");
                 res.send("sucesso");
                 res.redirect("/app");
-                return;
+                //return;
             }
             else {
                 res.send("Erro no email ou password2");
