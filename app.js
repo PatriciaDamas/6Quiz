@@ -134,8 +134,8 @@ app.get('/perguntas', function (req, res) {
 app.get('/jogo', function (req, res) {
     var tema = req.param('tema');
     var d = new Date();
-    var n = d.getTime();
-    jogoID = tema + n;
+    //var n = d.getTime();
+    jogoID = tema + d;
     var sql = "insert into Jogo (id_jogo, nome_jogo) values('" + jogo + "','" + tema + "');";
     console.log(sql);
     connection.query(sql, function (err, rows, fields) {
