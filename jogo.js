@@ -276,7 +276,7 @@ $(document).ready(function () {
                                                 url: urlc+"pontuacao?pontos=" + pontuacaoJoagador,
                                                 contentType: "application/json"
                                             });
-                                            location.href = 'https://wquizz.herokuapp.com/app';
+                                            //location.href = 'https://wquizz.herokuapp.com/app';
 
                                         } // final action
                                     });
