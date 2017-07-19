@@ -267,11 +267,11 @@ $(document).ready(function () {
                                             console.log("timeE: " + elapsed);
                                             //tempo = 1;
                                         }, // callback for each second
-                                        onCounterEnd: function () {
+                                        onCounterEnd: function (sec) {
                                             //alert('counter ended!');
                                             //tempo = 0;
 
-                                            /*if (timetogoFirst == 0) {
+                                            if (sec == 0) {
                                                 console.log("pontos");
                                                 $.ajax({
                                                     ype: "GET",
@@ -279,7 +279,7 @@ $(document).ready(function () {
                                                     contentType: "application/json"
                                                 });
                                                 //location.href = 'https://wquizz.herokuapp.com/app';
-                                            }*/
+                                            }
 
                                         } // final action
                                     });
