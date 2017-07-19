@@ -191,12 +191,8 @@ app.get('/logout', function(req, res){
     console.log("destroyed");
     req.session = null;
     //req.session.destroy();
-    res.redirect("/");
+    res.send("sucesso");
     console.log(userID);
-});
-
-app.get('/inicial', function(req,res){
-    res.redirect("/app");
 });
 
 app.listen(port);
