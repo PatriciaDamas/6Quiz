@@ -74,7 +74,7 @@ app.post('/login', function (req, res) {
                 //res.send("erro");
             }
             else if (rows.lenght === 1) {
-                
+                console.log("login");
                 userID = rows[0].id_utilizador;
                 //res.setHeader("User", userID);
                 req.session.user1 = rows[0].email;
