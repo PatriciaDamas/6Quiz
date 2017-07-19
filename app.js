@@ -188,6 +188,7 @@ app.get('/ranking', function (req, res) {
 
 app.get('/logout', function(req, res){
     userID=0;
+    console.log("destroyed");
     req.session = null;
     req.session.destroy();
     res.redirect("/");
