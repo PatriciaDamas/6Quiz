@@ -273,7 +273,7 @@ $(document).ready(function () {
 
                                             $.ajax({
                                                 ype: "GET",
-                                                url: urlc+"pontucao?pontos=" + pontuacaoJoagador,
+                                                url: urlc+"pontuacao?pontos=" + pontuacaoJoagador,
                                                 contentType: "application/json"
                                             });
                                             //location.href = 'perguntas.html';
