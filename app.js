@@ -143,7 +143,7 @@ app.get('/jogo', function (req, res) {
 
     });
     var sql2 = "Insert into Utilizador_Jogo (id_utilizador, id_jogo, pontuacao_utilizador) values (" + userID + ",'" + jogoID + "',0);";
-    connection.query(sql, function (err, rows, fields) {
+    connection.query(sql2, function (err, rows, fields) {
 
     });
 });
