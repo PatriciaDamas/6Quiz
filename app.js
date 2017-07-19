@@ -142,6 +142,10 @@ app.get('/jogo', function (req, res) {
     connection.query(sql, function (err, rows, fields) {
 
     });
+    var sql2 = "Insert into Utilizador_Jogo (id_utilizador, id_jogo, pontuacao_utilizador) values (" + userID + ",'" + jogoID + "'," + pontos + ");";
+    connection.query(sql, function (err, rows, fields) {
+
+    });
 });
 
 app.get('/respostas', function (req, res) {
