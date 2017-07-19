@@ -100,7 +100,6 @@ $(document).ready(function () {
                     var v = 0;
                     var contTeste = 0;//diferenciar cores botões
                     var pontuacaoP = [];//Guarda o valor de cada pergunta
-                    var timetogoFirst;
                     var nivel1 = '<div class="row" id= "div_nivel"><div class="col-sm-3"></div><div class="col-sm-6"><h3 id="temaEscolhido">' + idObj + '</h3></div><div class="col-sm-3"></div></div>'
                     var nivel1 = '<div class="row" id= "div_nivel"><div class="col-sm-3"></div><div class="col-sm-6"><h3 id="temaEscolhido">' + idObj + '</h3></div><div class="col-sm-3"></div></div>'
                     var bar = "<div class='progress active progress-striped' id='progressouter'><div class='progress-bar' id='progress'></div></div>";
@@ -258,37 +257,34 @@ $(document).ready(function () {
                                         myCounter.start();
                                     });
 
-                                    timetogoFirst = 180;
+                                    var timetogoFirst = 180;
                                     var myCounterFirst = new Countdown({
                                         seconds: timetogoFirst, // number of seconds to count down
                                         onUpdateStatus: function (sec) {
                                             elapsed = timetogoFirst - sec;
                                             $('.progress-bar').width(((elapsed / timetogoFirst) * 100) + "%");
-
+                                            console.log("time: " + timetogoFirst);
                                             //tempo = 1;
                                         }, // callback for each second
                                         onCounterEnd: function () {
                                             //alert('counter ended!');
                                             //tempo = 0;
 
-                                            /* $.ajax({
-                                                 ype: "GET",
-                                                 url: urlc + "pontuacao?pontos=" + pontuacaoJoagador,
-                                                 contentType: "application/json"
-                                             });*/
+                                            /*if (timetogoFirst == 0) {
+                                                console.log("pontos");
+                                                $.ajax({
+                                                    ype: "GET",
+                                                    url: urlc + "pontuacao?pontos=" + pontuacaoJoagador,
+                                                    contentType: "application/json"
+                                                });
+                                                //location.href = 'https://wquizz.herokuapp.com/app';
+                                            }*/
 
                                         } // final action
                                     });
                                     myCounterFirst.start();
 
-                                    if (timetogoFirst == 0) {
-                                        $.ajax({
-                                            ype: "GET",
-                                            url: urlc + "pontuacao?pontos=" + pontuacaoJoagador,
-                                            contentType: "application/json"
-                                        });
-                                        //location.href = 'https://wquizz.herokuapp.com/app';
-                                    }
+
                                 });
 
                             });//fim perguntas
