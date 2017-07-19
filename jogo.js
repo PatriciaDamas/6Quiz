@@ -263,7 +263,7 @@ $(document).ready(function () {
                                         onUpdateStatus: function (sec) {
                                             elapsed = timetogoFirst - sec;
                                             $('.progress-bar').width(((elapsed / timetogoFirst) * 100) + "%");
-                                            console.log("time: " + timetogoFirst);
+                                            console.log("time: " + elapsed);
                                             //tempo = 1;
                                         }, // callback for each second
                                         onCounterEnd: function () {
