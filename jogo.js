@@ -264,6 +264,7 @@ $(document).ready(function () {
                                             elapsed = timetogoFirst - sec;
                                             $('.progress-bar').width(((elapsed / timetogoFirst) * 100) + "%");
                                             console.log("time1: " + sec);
+                                            console.log("timeE: " + elapsed);
                                             //tempo = 1;
                                         }, // callback for each second
                                         onCounterEnd: function () {
