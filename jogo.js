@@ -238,7 +238,7 @@ $(document).ready(function () {
                                     }
                                     $('#div_tipoJogo3').on(function () {
                                         // do stuff
-                                        var timetogo = 30;
+                                        var timetogo = 180;
                                         console.log(timetogo);
 
                                         var myCounter = new Countdown({
@@ -258,7 +258,7 @@ $(document).ready(function () {
                                         myCounter.start();
                                     });
 
-                                    var timetogoFirst = 30;
+                                    var timetogoFirst = 180;
                                     var myCounterFirst = new Countdown({
                                         seconds: timetogoFirst, // number of seconds to count down
                                         onUpdateStatus: function (sec) {
@@ -271,16 +271,24 @@ $(document).ready(function () {
                                             //alert('counter ended!');
                                             //tempo = 0;
 
-                                            $.ajax({
+                                           /* $.ajax({
                                                 ype: "GET",
-                                                url: urlc+"pontuacao?pontos=" + pontuacaoJoagador,
+                                                url: urlc + "pontuacao?pontos=" + pontuacaoJoagador,
                                                 contentType: "application/json"
-                                            });
-                                            //location.href = 'https://wquizz.herokuapp.com/app';
+                                            });*/
 
                                         } // final action
                                     });
                                     myCounterFirst.start();
+
+                                    if (timetogoFirst == 0) {
+                                        $.ajax({
+                                            ype: "GET",
+                                            url: urlc + "pontuacao?pontos=" + pontuacaoJoagador,
+                                            contentType: "application/json"
+                                        });
+                                        //location.href = 'https://wquizz.herokuapp.com/app';
+                                    }
                                 });
 
                             });//fim perguntas
