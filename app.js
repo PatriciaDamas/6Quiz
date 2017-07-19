@@ -136,13 +136,13 @@ app.get('/jogo', function (req, res) {
     var d = new Date();
     //var n = d.getTime();
     console.log("criou jogo");
-    jogoID = tema + d;
+    jogoID = tema + d + userID;
     var sql = "insert into Jogo (id_jogo, nome_jogo) values('" + jogoID + "','" + tema + "');";
     console.log(sql);
     connection.query(sql, function (err, rows, fields) {
 
     });
-    var sql2 = "Insert into Utilizador_Jogo (id_utilizador, id_jogo, pontuacao_utilizador) values (" + userID + ",'" + jogoID + "'," + pontos + ");";
+    var sql2 = "Insert into Utilizador_Jogo (id_utilizador, id_jogo, pontuacao_utilizador) values (" + userID + ",'" + jogoID + "',0);";
     connection.query(sql, function (err, rows, fields) {
 
     });
@@ -169,7 +169,7 @@ app.get('/associacao', function(req, res){
 app.get('/pontuacao', function (req, res) {
     console.log("guardou pontos");
     var pontos = req.param('pontos');
-    var sql = "Insert into Utilizador_Jogo (id_utilizador, id_jogo, pontuacao_utilizador) values (" + userID + ",'" + jogoID + "'," + pontos + ");";
+    var sql = "update Utilizador_Jogo set pontuacao_utilizador="+ pontos +" where id_jogo='"+jogoID+"';";
     connection.query(sql, function (err, rows, fields) {
 
     });
