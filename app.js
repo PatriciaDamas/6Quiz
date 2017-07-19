@@ -136,7 +136,7 @@ app.get('/jogo', function (req, res) {
     var d = new Date();
     //var n = d.getTime();
     jogoID = tema + d;
-    var sql = "insert into Jogo (id_jogo, nome_jogo) values('" + jogo + "','" + tema + "');";
+    var sql = "insert into Jogo (id_jogo, nome_jogo) values('" + jogoID + "','" + tema + "');";
     console.log(sql);
     connection.query(sql, function (err, rows, fields) {
 
