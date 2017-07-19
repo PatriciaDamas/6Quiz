@@ -73,7 +73,7 @@ app.post('/login', function (req, res) {
                 console.log("erro");
                 //res.send("erro");
             }
-            else if (rows.lenght == 1) {
+            else {
                 console.log("login");
                 userID = rows[0].id_utilizador;
                 //res.setHeader("User", userID);
@@ -87,9 +87,9 @@ app.post('/login', function (req, res) {
                 res.redirect("/app");
                 //return;
             }
-            else {
+            /*else {
                 res.send("Erro no email ou password2");
-            }
+            }*/
         }
         else {
             res.send("Serviço indisponivel");
