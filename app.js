@@ -83,8 +83,8 @@ app.post('/login', function (req, res) {
                 //console.log("uID=" + userID);
                 //res.status(200).send("Sucessos");
                 //console.log("sucesso");
-                //res.send("sucesso");
-                return res.redirect("/app");
+                res.send("sucesso");
+                //return res.redirect("/app");
                 //return;
             }
             /*else {
