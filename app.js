@@ -80,9 +80,9 @@ app.post('/login', function (req, res) {
                 req.session.user1 = rows[0].email;
                 req.session.passeUser = rows[0].password;
                 user = rows[0].email;
-                console.log("uID=" + userID);
-                res.status(200).send("Sucessos");
-                console.log("sucesso");
+                //console.log("uID=" + userID);
+                //res.status(200).send("Sucessos");
+                //console.log("sucesso");
                 //res.send("sucesso");
                 res.redirect("/app");
                 //return;
