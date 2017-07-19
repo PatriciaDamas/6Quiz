@@ -135,6 +135,7 @@ app.get('/jogo', function (req, res) {
     var tema = req.param('tema');
     var d = new Date();
     //var n = d.getTime();
+    console.log("criou jogo");
     jogoID = tema + d;
     var sql = "insert into Jogo (id_jogo, nome_jogo) values('" + jogoID + "','" + tema + "');";
     console.log(sql);
@@ -162,6 +163,7 @@ app.get('/associacao', function(req, res){
 
 //adiciona a pontuação de um utilizador num determinado jogo à BD
 app.get('/pontuacao', function (req, res) {
+    console.log("guardou pontos");
     var pontos = req.param('pontos');
     var sql = "Insert into Utilizador_Jogo (id_utilizador, id_jogo, pontuacao_utilizador) values (" + userID + ",'" + jogoID + "'," + pontos + ");";
     connection.query(sql, function (err, rows, fields) {
