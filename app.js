@@ -84,7 +84,7 @@ app.post('/login', function (req, res) {
                 //res.status(200).send("Sucessos");
                 //console.log("sucesso");
                 //res.send("sucesso");
-                res.redirect("/app");
+                return res.redirect("/app");
                 //return;
             }
             /*else {
