@@ -150,7 +150,7 @@
 
 				<li>
 
-					<a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" style="color:#FFFFFF; font-size: 30px"></span></a>
+					<a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" id="men" style="color:#FFFFFF; font-size: 30px"></span></a>
 
 				</li>
 
@@ -265,7 +265,8 @@
     $("#menu-toggle").click(function(e) {
 
         e.preventDefault();
-
+		  
+		$("#men").show()
         $("#sidebar-wrapper").toggleClass("toggled");
 
     });
@@ -273,7 +274,7 @@
     $("#menu-toggle2").click(function(e) {
 
         e.preventDefault();
-
+		$("#men").hide();
         $("#sidebar-wrapper").toggleClass("toggled");
 
     });
