@@ -177,7 +177,8 @@ $(document).ready(function () {
                                             // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
                                        
                                        
-                                       respostas += '<div class="col-sm-6"><center><label class="input-group input-group-radio row"><input type="radio" class="hidden-inputs" name="optradio" value="' + data.resposta + '"><span class="input-group-addon"></span><span class="input-group-title">'+  data.resposta+'</span></label></center></div>'
+                                       respostas += '<div class="col-sm-6"><center><div id="div_resp"><label class="input-group input-group-radio row"><input type="radio" class="hidden-inputs" name="optradio" value="' + data.resposta + '"><span class="input-group-addon"></span><span class="input-group-title">'+  data.resposta+'</span></label></center></div></div>'
+                                        $("#div_resp").css("text-align", "left");
                                         
                                 
                                        }/*
