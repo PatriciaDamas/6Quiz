@@ -215,7 +215,7 @@ $(document).ready(function () {
 
                                         r++;
                                     });
-                                    respostas += '</div>';
+                                    // respostas += '</div>';
 
                                     $("#div_tipoJogo").append(pergunta + respostas);
                                     var pontuacaoJoagador = 0;//pontuação do jogador
