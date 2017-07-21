@@ -265,8 +265,8 @@
     $("#menu-toggle").click(function(e) {
 
         e.preventDefault();
-		  
-		$("#men").show()
+		$("#men").hide();
+		
         $("#sidebar-wrapper").toggleClass("toggled");
 
     });
@@ -274,7 +274,8 @@
     $("#menu-toggle2").click(function(e) {
 
         e.preventDefault();
-		$("#men").hide();
+		
+		$("#men").show();
         $("#sidebar-wrapper").toggleClass("toggled");
 
     });
