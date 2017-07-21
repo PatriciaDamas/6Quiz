@@ -158,10 +158,10 @@ $(document).ready(function () {
                                 }).done(function (data) {
                                     console.log("hh" + data);
                                     $.each(data, function (key, data) {
-                                        //console.log("hh2");
+                                       
 
                                         var idR = data.id_resposta;
-                                        //console.log("b<dhfgh" + idR)
+                                       
                                         if (data.validade == 1) {
                                             validade[v] = idR;
                                             console.log('v ' + validade[v]);
@@ -174,8 +174,13 @@ $(document).ready(function () {
                                         //Escolha múltipla
                                         if (tipoPergunta == 1) {
                                             console.log("Escolha multipla");
-                                            respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
-                                        }/*
+                                            // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
+                                       
+                                       
+                                       respostas += '<div class="col-sm-6"><center><label class="input-group input-group-radio row"><input type="radio" class="hidden-inputs" name="optradio" value="' + data.resposta + '"> ' + data.resposta + '</label></center></div>'
+                                        
+                                
+                                       }/*
                                         //Verdadeiro ou falso
                                         else if (tipoPergunta == 2) {
 
