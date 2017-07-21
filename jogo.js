@@ -71,7 +71,7 @@ $(document).ready(function () {
 
                 //+="criar botao html"+data.nome_tema;
 
-                temas += "<div class='col-sm-3'><center><div  id='temasSingle'><center><div class='div_imag_tema' id='" + data.nome_tema + "'><img src='https://webitcloud.net/PW/1617/ACJ/wQuizz/imagens6quiz/" + data.nome_tema + ".jpg' class='img-responsive' id='logoTema'><p>" + data.nome_tema + "</p></div></center></div></center></div>";
+                temas += "<div class='col-sm-3'><center><div  id='temasSingle'><center><div class='div_imag_tema' id='" + data.nome_tema + "'><img src='https://webitcloud.net/PW/1617/ACJ/wQuizz/imagens6quiz/" + data.nome_tema + ".jpg' class='img-responsive' id='logoTema'><p id='ptema'>" + data.nome_tema + "</p></div></center></div></center></div>";
 
                 nomes[i] = data.nome_tema;
 
