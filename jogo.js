@@ -173,7 +173,7 @@ $(document).ready(function () {
                                         //console.log("dsf" + nomesDiv[r]);
                                         //Escolha múltipla
                                         if (tipoPergunta == 1) {
-                                            console.log("Escolha multipla");
+                                            console.log("Escolha multipla " + data.resposta);
                                             // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
                                        
                                        
