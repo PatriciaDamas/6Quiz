@@ -224,27 +224,29 @@ $(document).ready(function () {
                                     var pontuacaoJoagador = 0;//pontuação do jogador
                                     console.log("a" + pontuacaoJoagador);
 
-                                   // for (var k = 0; k < p; k++) {
-                                        $('div .hidden-inputs').click(function () {
-                                            checkedState = $(this).attr('checked');
-                                            $(this).parent('div').children('.hidden-inputs:checked').each(function () {
-                                                $(this).attr('checked', false);
-                                            });
-                                            $(this).attr('checked', checkedState);
-                                            var idResp = $(this).attr('id');
-                                            for (var d = 0; d < v; d++) {
-                                                if (idResp == validade[d]) {
-                                                    console.log("true");
-                                                    console.log("fsa" + idResp + "fdsf" + validade[d]);
-                                                    //$("#" + idResp).css('background-color', '#00cc00');
-                                                    console.log("hda" + pontuacaoP[v]);
-                                                    pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
-                                                    //pontuacaoJoagador += pontuacaoP[v];
-                                                    console.log("k" + pontuacaoJoagador);
+                                    for (var k = 0; k < p; k++) {
+                                        $('#div_resp' + p).on(function () {
+                                            $('div .hidden-inputs').click(function () {
+                                                checkedState = $(this).attr('checked');
+                                                $(this).parent('div').children('.hidden-inputs:checked').each(function () {
+                                                    $(this).attr('checked', false);
+                                                });
+                                                $(this).attr('checked', checkedState);
+                                                var idResp = $(this).attr('id');
+                                                for (var d = 0; d < v; d++) {
+                                                    if (idResp == validade[d]) {
+                                                        console.log("true");
+                                                        console.log("fsa" + idResp + "fdsf" + validade[d]);
+                                                        //$("#" + idResp).css('background-color', '#00cc00');
+                                                        console.log("hda" + pontuacaoP[v]);
+                                                        pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
+                                                        //pontuacaoJoagador += pontuacaoP[v];
+                                                        console.log("k" + pontuacaoJoagador);
+                                                    }
                                                 }
-                                            }
+                                            });
                                         });
-                                    //}
+                                    }
 
 
                                     $('#div_tipoJogo3').on(function () {
