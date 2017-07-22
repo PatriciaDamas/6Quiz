@@ -180,7 +180,7 @@ $(document).ready(function () {
                                             // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
 
 
-                                            respostas += '<input type="radio" class="hidden-inputs" id="' + data.id_resposta + '" name="option' + p + '" id="labelRes' + p + '" value="' + data.resposta + '"><span class="input-group-addon" id="labelRes' + p + '">' + data.resposta + '</span>'
+                                            respostas += '<input type="checkbox" class="checkbox" id="' + data.id_resposta + '" name="' + data.id_resposta + '" id="labelRes' + p + '" value="' + data.resposta + '"><span class="input-group-addon" id="labelRes' + p + '">' + data.resposta + '</span>'
                                             // $("#div_resp").css("text-align", "left");
                                             // <span class="input-group-title" id="resp" >'+  data.resposta+'</span>
 
