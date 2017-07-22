@@ -179,7 +179,7 @@ $(document).ready(function () {
                                             // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
 
 
-                                            respostas += '<div class="col-sm-6"><div id="div_resp2"><label name="' + perguntasID + '"class="input-group input-group-radio row"><input type="radio" class="hidden-inputs" name="' + perguntasID + '" value="' + data.resposta + '"><span class="input-group-addon" id="resp2">' + data.resposta + '</span></label></div></div>'
+                                            respostas += '<div class="col-sm-6"><div id="div_resp2"><label name="option' + perguntasID + '" class="input-group input-group-radio row"><input type="radio" class="hidden-inputs" name="option' + perguntasID + '" value="' + data.resposta + '"><span class="input-group-addon" id="resp2">' + data.resposta + '</span></label></div></div>'
                                             // $("#div_resp").css("text-align", "left");
                                             // <span class="input-group-title" id="resp" >'+  data.resposta+'</span>
 
