@@ -137,7 +137,7 @@ $(document).ready(function () {
                                 perguntasID = data.id_pergunta;
                                 //console.log(perguntasID[p]);
                                 pergunta += '<div class="col-sm-8"><center><div id="' + data.id_pergunta + '"><h2 id="pergunta">' + data.pergunta + '</h2><br><br></div></div><div class="col-sm-2"></div></div>';
-                                var respostas = '<div class="row" id="div_resp">';
+                                var respostas = '<div class="row" id="div_resp' + perguntasID + '">';
                                 var tipoPergunta = data.id_tipo_pergunta;
                                 nomesDiv[p] = perguntasID;
                                 p++;
@@ -179,7 +179,7 @@ $(document).ready(function () {
                                             // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
 
 
-                                            respostas += '<div class="col-sm-6"><div id="div_resp2"><label class="input-group input-group-radio row"><input type="radio" class="hidden-inputs" name="' + perguntasID + '" value="' + data.resposta + '"><span class="input-group-addon" id="resp2">' + data.resposta + '</span></label></div></div>'
+                                            respostas += '<div class="col-sm-6"><div id="div_resp2"><label name="'+ perguntasID + '"class="input-group input-group-radio row"><input type="radio" class="hidden-inputs" name="' + perguntasID + '" value="' + data.resposta + '"><span class="input-group-addon" id="resp2">' + data.resposta + '</span></label></div></div>'
                                             // $("#div_resp").css("text-align", "left");
                                             // <span class="input-group-title" id="resp" >'+  data.resposta+'</span>
 
@@ -221,20 +221,24 @@ $(document).ready(function () {
 
                                     var pontuacaoJoagador = 0;//pontuação do jogador
                                     console.log("a" + pontuacaoJoagador);
+
                                     for (var k = 0; k < p; k++) {
-                                        var idResp = $("input:radio[name='" + nemesDiv[k] + "']:checked").val();
-                                        for (var d = 0; d < v; d++) {
-                                            if (idResp == validade[d]) {
-                                                console.log("true");
-                                                console.log("fsa" + idResp + "fdsf" + validade[d]);
-                                                //$("#" + idResp).css('background-color', '#00cc00');
-                                                console.log("hda" + pontuacaoP[v]);
-                                                pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
-                                                //pontuacaoJoagador += pontuacaoP[v];
-                                                console.log("k" + pontuacaoJoagador);
+                                        $('#').click(function () {
+                                            var idResp = $("input:radio[name='" + nemesDiv[k] + "']:checked").val();
+                                            for (var d = 0; d < v; d++) {
+                                                if (idResp == validade[d]) {
+                                                    console.log("true");
+                                                    console.log("fsa" + idResp + "fdsf" + validade[d]);
+                                                    //$("#" + idResp).css('background-color', '#00cc00');
+                                                    console.log("hda" + pontuacaoP[v]);
+                                                    pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
+                                                    //pontuacaoJoagador += pontuacaoP[v];
+                                                    console.log("k" + pontuacaoJoagador);
+                                                }
                                             }
-                                        }
+                                        });
                                     }
+
 
                                     $('#div_tipoJogo3').on(function () {
                                         // do stuff
