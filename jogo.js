@@ -215,7 +215,7 @@ $(document).ready(function () {
 
                                         //r++;
                                     });
-                                    respostas += '</label></div></div></div>';
+                                    respostas += '</label></div></div></div></div>';
 
                                     $("#div_tipoJogo").append(pergunta + respostas);
 
