@@ -256,18 +256,16 @@ $(document).ready(function () {
                                             var pontuacaoJoagador = 0;//pontuação do jogador
                                             console.log("a" + pontuacaoJoagador);
                                             for (var k = 0; k < p; k++) {
-                                                if ($("input:radio[name='" + nemesDiv[k] + "']").is(":checked")) {
-                                                    var idResp = $(this).attr('value');
-                                                    for (var d = 0; d < v; d++) {
-                                                        if (idResp == validade[d]) {
-                                                            console.log("true");
-                                                            console.log("fsa" + idResp + "fdsf" + validade[d]);
-                                                            //$("#" + idResp).css('background-color', '#00cc00');
-                                                            console.log("hda" + pontuacaoP[v]);
-                                                            pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
-                                                            //pontuacaoJoagador += pontuacaoP[v];
-                                                            console.log("k" + pontuacaoJoagador);
-                                                        }
+                                                var idResp = $("input:radio[name='" + nemesDiv[k] + "']:checked").val();
+                                                for (var d = 0; d < v; d++) {
+                                                    if (idResp == validade[d]) {
+                                                        console.log("true");
+                                                        console.log("fsa" + idResp + "fdsf" + validade[d]);
+                                                        //$("#" + idResp).css('background-color', '#00cc00');
+                                                        console.log("hda" + pontuacaoP[v]);
+                                                        pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
+                                                        //pontuacaoJoagador += pontuacaoP[v];
+                                                        console.log("k" + pontuacaoJoagador);
                                                     }
                                                 }
                                             }
