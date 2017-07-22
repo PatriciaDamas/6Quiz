@@ -218,6 +218,24 @@ $(document).ready(function () {
                                     respostas += '</div>';
 
                                     $("#div_tipoJogo").append(pergunta + respostas);
+
+                                    var pontuacaoJoagador = 0;//pontuação do jogador
+                                    console.log("a" + pontuacaoJoagador);
+                                    for (var k = 0; k < p; k++) {
+                                        var idResp = $("input:radio[name='" + nemesDiv[k] + "']:checked").val();
+                                        for (var d = 0; d < v; d++) {
+                                            if (idResp == validade[d]) {
+                                                console.log("true");
+                                                console.log("fsa" + idResp + "fdsf" + validade[d]);
+                                                //$("#" + idResp).css('background-color', '#00cc00');
+                                                console.log("hda" + pontuacaoP[v]);
+                                                pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
+                                                //pontuacaoJoagador += pontuacaoP[v];
+                                                console.log("k" + pontuacaoJoagador);
+                                            }
+                                        }
+                                    }
+
                                     $('#div_tipoJogo3').on(function () {
                                         // do stuff
                                         var timetogo = 180;
@@ -253,22 +271,6 @@ $(document).ready(function () {
                                         onCounterEnd: function () {
                                             //alert('counter ended!');
                                             //tempo = 0;
-                                            var pontuacaoJoagador = 0;//pontuação do jogador
-                                            console.log("a" + pontuacaoJoagador);
-                                            for (var k = 0; k < p; k++) {
-                                                var idResp = $("input:radio[name='" + nemesDiv[k] + "']:checked").val();
-                                                for (var d = 0; d < v; d++) {
-                                                    if (idResp == validade[d]) {
-                                                        console.log("true");
-                                                        console.log("fsa" + idResp + "fdsf" + validade[d]);
-                                                        //$("#" + idResp).css('background-color', '#00cc00');
-                                                        console.log("hda" + pontuacaoP[v]);
-                                                        pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
-                                                        //pontuacaoJoagador += pontuacaoP[v];
-                                                        console.log("k" + pontuacaoJoagador);
-                                                    }
-                                                }
-                                            }
 
                                             console.log("pontos");
                                             $.ajax({
