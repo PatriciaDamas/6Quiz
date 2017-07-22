@@ -224,8 +224,8 @@ $(document).ready(function () {
                                     var pontuacaoJoagador = 0;//pontuação do jogador
                                     console.log("a" + pontuacaoJoagador);
 
-                                    for (var k = 0; k < p; k++) {
-                                        $('#div_resp' + p + ' .hidden-inputs').click(function () {
+                                   // for (var k = 0; k < p; k++) {
+                                        $('div .hidden-inputs').click(function () {
                                             checkedState = $(this).attr('checked');
                                             $(this).parent('div').children('.hidden-inputs:checked').each(function () {
                                                 $(this).attr('checked', false);
@@ -244,7 +244,7 @@ $(document).ready(function () {
                                                 }
                                             }
                                         });
-                                    }
+                                    //}
 
 
                                     $('#div_tipoJogo3').on(function () {
