@@ -171,7 +171,7 @@ $(document).ready(function () {
                                             console.log('p ' + pontuacaoP[v]);
                                             v++;
                                         }
-                                        nomesDiv[r] = idR;
+                                        //nomesDiv[r] = idR;
                                         //console.log("dsf" + nomesDiv[r]);
                                         //Escolha múltipla ou verdadeiro ou falso
                                         if (tipoPergunta == 1 || tipoPergunta == 2) {
