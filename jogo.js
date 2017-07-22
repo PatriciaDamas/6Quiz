@@ -137,10 +137,10 @@ $(document).ready(function () {
                                 perguntasID = data.id_pergunta;
                                 //console.log(perguntasID[p]);
                                 pergunta += '<div class="col-sm-8"><center><div id="' + data.id_pergunta + '"><h2 id="pergunta">' + data.pergunta + '</h2><br><br></div></div><div class="col-sm-2"></div></div>';
-                                var respostas = '<div class="row"><div class="col-sm-6"><div id="div_resp2'+ +perguntasID+'"><label name="option' + perguntasID + '" class="input-group input-group-radio row">';
                                 var tipoPergunta = data.id_tipo_pergunta;
                                 nomesDiv[p] = perguntasID;
                                 p++;
+                                var respostas = '<div class="row"><div class="col-sm-6"><div id="div_resp' + p + '"><label name="option' + p + '" class="input-group input-group-radio row">';
                                 //var t = false;
                                 /*if (tipoPergunta == 3) {
                                         $.ajax({
@@ -179,7 +179,7 @@ $(document).ready(function () {
                                             // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
 
 
-                                            respostas += '<input type="radio" class="hidden-inputs" name="option' + perguntasID + '" value="' + data.resposta + '"><span class="input-group-addon" id="resp2">' + data.resposta + '</span>'
+                                            respostas += '<input type="radio" class="hidden-inputs" name="option' + p + '" value="' + data.resposta + '"><span class="input-group-addon" id="resp2">' + data.resposta + '</span>'
                                             // $("#div_resp").css("text-align", "left");
                                             // <span class="input-group-title" id="resp" >'+  data.resposta+'</span>
 
