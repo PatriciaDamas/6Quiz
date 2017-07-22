@@ -224,7 +224,7 @@ $(document).ready(function () {
 
                                     for (var k = 0; k < p; k++) {
                                         $('#').click(function () {
-                                            var idResp = $("input:radio[name='" + nemesDiv[k] + "']:checked").val();
+                                            var idResp = $("input:radio[name='" + nomesDiv[k] + "']:checked").val();
                                             for (var d = 0; d < v; d++) {
                                                 if (idResp == validade[d]) {
                                                     console.log("true");
