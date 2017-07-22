@@ -140,7 +140,8 @@ $(document).ready(function () {
                                 var tipoPergunta = data.id_tipo_pergunta;
                                 nomesDiv[p] = perguntasID;
                                 p++;
-                                var respostas = '<div class="row"><div class="col-sm-6"><div id="div_resp' + p + '"><label name="option' + p + '" class="input-group input-group-radio row" for="labelRes'+p+'">';
+                                var respostas = '<div class="row"><div class="col-sm-6"><div id="div_resp' + p + '">';
+                                //<label name="option' + p + '" class="input-group input-group-radio row" for="labelRes'+p+'">';
                                 //var t = false;
                                 /*if (tipoPergunta == 3) {
                                         $.ajax({
@@ -179,7 +180,7 @@ $(document).ready(function () {
                                             // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
 
 
-                                            respostas += '<input type="radio" class="hidden-inputs" name="option' + p + '" id="labelRes'+p+'" value="' + data.resposta + '"><span class="input-group-addon" id="labelRes'+p+'">' + data.resposta + '</span>'
+                                            respostas += '<input type="radio" class="hidden-inputs" id="' + data.id_resposta + '" name="option' + p + '" id="labelRes' + p + '" value="' + data.resposta + '"><span class="input-group-addon" id="labelRes' + p + '">' + data.resposta + '</span>'
                                             // $("#div_resp").css("text-align", "left");
                                             // <span class="input-group-title" id="resp" >'+  data.resposta+'</span>
 
@@ -215,7 +216,8 @@ $(document).ready(function () {
 
                                         //r++;
                                     });
-                                    respostas += '</label></div></div></div></div>';
+                                    //respostas += '</label></div></div></div></div>';
+                                    respostas += '</div></div></div></div>';
 
                                     $("#div_tipoJogo").append(pergunta + respostas);
 
@@ -223,18 +225,25 @@ $(document).ready(function () {
                                     console.log("a" + pontuacaoJoagador);
 
                                     for (var k = 0; k < p; k++) {
-                                        var idResp = $("input:radio[name='" + nomesDiv[k] + "']:checked").val();
-                                        for (var d = 0; d < v; d++) {
-                                            if (idResp == validade[d]) {
-                                                console.log("true");
-                                                console.log("fsa" + idResp + "fdsf" + validade[d]);
-                                                //$("#" + idResp).css('background-color', '#00cc00');
-                                                console.log("hda" + pontuacaoP[v]);
-                                                pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
-                                                //pontuacaoJoagador += pontuacaoP[v];
-                                                console.log("k" + pontuacaoJoagador);
+                                        $('#div_resp' + p + ' .hidden-inputs').click(function () {
+                                            checkedState = $(this).attr('checked');
+                                            $(this).parent('div').children('.hidden-inputs:checked').each(function () {
+                                                $(this).attr('checked', false);
+                                            });
+                                            $(this).attr('checked', checkedState);
+                                            var idResp = $(this).attr('id');
+                                            for (var d = 0; d < v; d++) {
+                                                if (idResp == validade[d]) {
+                                                    console.log("true");
+                                                    console.log("fsa" + idResp + "fdsf" + validade[d]);
+                                                    //$("#" + idResp).css('background-color', '#00cc00');
+                                                    console.log("hda" + pontuacaoP[v]);
+                                                    pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
+                                                    //pontuacaoJoagador += pontuacaoP[v];
+                                                    console.log("k" + pontuacaoJoagador);
+                                                }
                                             }
-                                        }
+                                        });
                                     }
 
 
