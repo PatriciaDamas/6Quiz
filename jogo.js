@@ -181,7 +181,7 @@ $(document).ready(function () {
                                             // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
 
 
-                                            respostas += '<input type="radio" class="checkbox' + p + '" id="' + data.id_resposta + '" name="option' + p + '" id="labelRes' + p + '" value="' + data.resposta + '"><span class="input-group-addon" id="labelRes' + p + '">' + data.resposta + '</span>'
+                                            respostas += '<input type="radio" class="checkbox' + p + '" id="' + data.id_resposta + '" name="option' + p + '" id="labelRes' + p + '" value="' + data.id_resposta + '"><span class="input-group-addon" id="labelRes' + p + '">' + data.resposta + '</span>'
                                             // $("#div_resp").css("text-align", "left");
                                             // <span class="input-group-title" id="resp" >'+  data.resposta+'</span>
 
@@ -237,13 +237,8 @@ $(document).ready(function () {
 
                     for (var k = 0; k < p; k++) {
                         //$('#div_resp' + p).on(function () {
-                        $('.checkbox' + k).click(function () {
-                            var checkedState = $(this).attr('checked');
-                            $(this).parent('div').children('.checkbox:checked').each(function () {
-                                $(this).attr('checked', false);
-                            });
-                            $(this).attr('checked', checkedState);
-                            var idResp = $(this).attr('id');
+                        $('#div_resp'+p+' .checkbox' + k).click(function () {
+                            var idResp=$(this+':checked').val();
                             //for (var d = 0; d < v; d++) {
                             if (idResp == validade[p]) {
                                 console.log("true");
