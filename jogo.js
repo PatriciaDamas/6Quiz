@@ -239,9 +239,9 @@ $(document).ready(function () {
                                     $(this).attr('checked', checkedState);
                                     var idResp = $(this).attr('id');
                                     //for (var d = 0; d < v; d++) {
-                                    if (idResp == validade[d]) {
+                                    if (idResp == validade[p]) {
                                         console.log("true");
-                                        console.log("fsa" + idResp + "fdsf" + validade[d]);
+                                        console.log("fsa" + idResp + "fdsf" + validade[p]);
                                         //$("#" + idResp).css('background-color', '#00cc00');
                                         console.log("hda" + pontuacaoP[v]);
                                         pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
