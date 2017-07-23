@@ -141,7 +141,7 @@ $(document).ready(function () {
                                 var tipoPergunta = data.id_tipo_pergunta;
                                 nomesDiv[p] = perguntasID;
                                 p++;
-                                var respostas = '<div class="row"><div class="col-sm-6"><div id="div_resp' + p + '">';
+                                var respostas = '<div class="row"><div class="col-sm-12"><div id="div_resp' + p + '">';
                                 //<label name="option' + p + '" class="input-group input-group-radio row" for="labelRes'+p+'">';
                                 //var t = false;
                                 /*if (tipoPergunta == 3) {
