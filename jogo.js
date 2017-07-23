@@ -226,9 +226,9 @@ $(document).ready(function () {
 
                                     for (var k = 0; k < p; k++) {
                                         $('#div_resp' + p).on(function () {
-                                            $('div .hidden-inputs').click(function () {
+                                            $('div .checkbox').click(function () {
                                                 checkedState = $(this).attr('checked');
-                                                $(this).parent('div').children('.hidden-inputs:checked').each(function () {
+                                                $(this).parent('div').children('.checkbox:checked').each(function () {
                                                     $(this).attr('checked', false);
                                                 });
                                                 $(this).attr('checked', checkedState);
