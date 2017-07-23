@@ -180,7 +180,7 @@ $(document).ready(function () {
                                             // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
 
 
-                                            respostas += '<input type="checkbox" class="checkbox'+p+'" id="' + data.id_resposta + '" name="' + data.id_resposta + '" id="labelRes' + p + '" value="' + data.resposta + '"><span class="input-group-addon" id="labelRes' + p + '">' + data.resposta + '</span>'
+                                            respostas += '<input type="checkbox" class="checkbox' + p + '" id="' + data.id_resposta + '" name="' + data.id_resposta + '" id="labelRes' + p + '" value="' + data.resposta + '"><span class="input-group-addon" id="labelRes' + p + '">' + data.resposta + '</span>'
                                             // $("#div_resp").css("text-align", "left");
                                             // <span class="input-group-title" id="resp" >'+  data.resposta+'</span>
 
@@ -221,85 +221,86 @@ $(document).ready(function () {
 
                                     $("#div_tipoJogo").append(pergunta + respostas);
 
-                                    var pontuacaoJoagador = 0;//pontuação do jogador
-                                    console.log("a" + pontuacaoJoagador);
 
-                                    for (var k = 0; k < p; k++) {
-                                        //$('#div_resp' + p).on(function () {
-                                            $('.checkbox'+k).click(function () {
-                                                var checkedState = $(this).attr('checked');
-                                                $(this).parent('div').children('.checkbox:checked').each(function () {
-                                                    $(this).attr('checked', false);
-                                                });
-                                                $(this).attr('checked', checkedState);
-                                                var idResp = $(this).attr('id');
-                                                //for (var d = 0; d < v; d++) {
-                                                    if (idResp == validade[d]) {
-                                                        console.log("true");
-                                                        console.log("fsa" + idResp + "fdsf" + validade[d]);
-                                                        //$("#" + idResp).css('background-color', '#00cc00');
-                                                        console.log("hda" + pontuacaoP[v]);
-                                                        pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
-                                                        //pontuacaoJoagador += pontuacaoP[v];
-                                                        console.log("k" + pontuacaoJoagador);
-                                                    }
-                                                //}
-                                            });
-                                        //});
-                                    }
-
-
-                                    $('#div_tipoJogo3').on(function () {
-                                        // do stuff
-                                        var timetogo = 180;
-                                        console.log(timetogo);
-
-                                        var myCounter = new Countdown({
-                                            seconds: timetogo, // number of seconds to count down
-                                            onUpdateStatus: function (sec) {
-                                                elapsed = timetogo - sec;
-                                                $('.progress-bar').width(((elapsed / timetogo) * 100) + "%");
-                                                //tempo = 1;
-                                            }, // callback for each second
-                                            onCounterEnd: function () {
-                                                //alert('counter ended!');
-                                                //tempo = 0;
-
-                                            } // final action
-                                        });
-
-                                        myCounter.start();
-                                    });
-
-                                    var timetogoFirst = 180;
-                                    var myCounterFirst = new Countdown({
-                                        seconds: timetogoFirst, // number of seconds to count down
-                                        onUpdateStatus: function (sec) {
-                                            elapsed = timetogoFirst - sec;
-                                            $('.progress-bar').width(((elapsed / timetogoFirst) * 100) + "%");
-                                            console.log("time1: " + sec);
-                                            console.log("timeE: " + elapsed);
-                                            //tempo = 1;
-                                        }, // callback for each second
-                                        onCounterEnd: function () {
-                                            //alert('counter ended!');
-                                            //tempo = 0;
-
-                                            console.log("pontos");
-                                            $.ajax({
-                                                ype: "GET",
-                                                url: urlc + "pontuacao?pontos=" + pontuacaoJoagador,
-                                                contentType: "application/json"
-                                            });
-                                            //location.href = 'https://wquizz.herokuapp.com/app';
-
-                                        } // final action
-                                    });
-                                    myCounterFirst.start();
                                 });
 
 
                             });//fim perguntas
+                            var pontuacaoJoagador = 0;//pontuação do jogador
+                            console.log("a" + pontuacaoJoagador);
+
+                            for (var k = 0; k < p; k++) {
+                                //$('#div_resp' + p).on(function () {
+                                $('.checkbox' + k).click(function () {
+                                    var checkedState = $(this).attr('checked');
+                                    $(this).parent('div').children('.checkbox:checked').each(function () {
+                                        $(this).attr('checked', false);
+                                    });
+                                    $(this).attr('checked', checkedState);
+                                    var idResp = $(this).attr('id');
+                                    //for (var d = 0; d < v; d++) {
+                                    if (idResp == validade[d]) {
+                                        console.log("true");
+                                        console.log("fsa" + idResp + "fdsf" + validade[d]);
+                                        //$("#" + idResp).css('background-color', '#00cc00');
+                                        console.log("hda" + pontuacaoP[v]);
+                                        pontuacaoJoagador += 30;//não estava a ir buscar a poontuação da resposta
+                                        //pontuacaoJoagador += pontuacaoP[v];
+                                        console.log("k" + pontuacaoJoagador);
+                                    }
+                                    //}
+                                });
+                                //});
+                            }
+
+
+                            $('#div_tipoJogo3').on(function () {
+                                // do stuff
+                                var timetogo = 180;
+                                console.log(timetogo);
+
+                                var myCounter = new Countdown({
+                                    seconds: timetogo, // number of seconds to count down
+                                    onUpdateStatus: function (sec) {
+                                        elapsed = timetogo - sec;
+                                        $('.progress-bar').width(((elapsed / timetogo) * 100) + "%");
+                                        //tempo = 1;
+                                    }, // callback for each second
+                                    onCounterEnd: function () {
+                                        //alert('counter ended!');
+                                        //tempo = 0;
+
+                                    } // final action
+                                });
+
+                                myCounter.start();
+                            });
+
+                            var timetogoFirst = 180;
+                            var myCounterFirst = new Countdown({
+                                seconds: timetogoFirst, // number of seconds to count down
+                                onUpdateStatus: function (sec) {
+                                    elapsed = timetogoFirst - sec;
+                                    $('.progress-bar').width(((elapsed / timetogoFirst) * 100) + "%");
+                                    console.log("time1: " + sec);
+                                    console.log("timeE: " + elapsed);
+                                    //tempo = 1;
+                                }, // callback for each second
+                                onCounterEnd: function () {
+                                    //alert('counter ended!');
+                                    //tempo = 0;
+
+                                    console.log("pontos");
+                                    $.ajax({
+                                        ype: "GET",
+                                        url: urlc + "pontuacao?pontos=" + pontuacaoJoagador,
+                                        contentType: "application/json"
+                                    });
+                                    //location.href = 'https://wquizz.herokuapp.com/app';
+
+                                } // final action
+                            });
+                            myCounterFirst.start();
                         });
 
 
