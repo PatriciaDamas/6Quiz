@@ -225,7 +225,7 @@ $(document).ready(function () {
                                     console.log("a" + pontuacaoJoagador);
 
                                     for (var k = 0; k < p; k++) {
-                                        $('#div_resp' + p).on(function () {
+                                        //$('#div_resp' + p).on(function () {
                                             $('div .checkbox').click(function () {
                                                 checkedState = $(this).attr('checked');
                                                 $(this).parent('div').children('.checkbox:checked').each(function () {
@@ -233,7 +233,7 @@ $(document).ready(function () {
                                                 });
                                                 $(this).attr('checked', checkedState);
                                                 var idResp = $(this).attr('id');
-                                                for (var d = 0; d < v; d++) {
+                                                //for (var d = 0; d < v; d++) {
                                                     if (idResp == validade[d]) {
                                                         console.log("true");
                                                         console.log("fsa" + idResp + "fdsf" + validade[d]);
@@ -243,9 +243,9 @@ $(document).ready(function () {
                                                         //pontuacaoJoagador += pontuacaoP[v];
                                                         console.log("k" + pontuacaoJoagador);
                                                     }
-                                                }
+                                                //}
                                             });
-                                        });
+                                        //});
                                     }
 
 
