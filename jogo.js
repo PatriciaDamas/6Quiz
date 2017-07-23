@@ -180,7 +180,7 @@ $(document).ready(function () {
                                             // respostas += '<div class="col-sm-6"><center><div class="div_resposta" id="' + data.id_resposta + '"><button type="button" class="btn" id="btn_resposta">' + data.resposta + '</button></div></center></div>';
 
 
-                                            respostas += '<input type="checkbox" class="checkbox" id="' + data.id_resposta + '" name="' + data.id_resposta + '" id="labelRes' + p + '" value="' + data.resposta + '"><span class="input-group-addon" id="labelRes' + p + '">' + data.resposta + '</span>'
+                                            respostas += '<input type="checkbox" class="checkbox'+p+'" id="' + data.id_resposta + '" name="' + data.id_resposta + '" id="labelRes' + p + '" value="' + data.resposta + '"><span class="input-group-addon" id="labelRes' + p + '">' + data.resposta + '</span>'
                                             // $("#div_resp").css("text-align", "left");
                                             // <span class="input-group-title" id="resp" >'+  data.resposta+'</span>
 
@@ -226,8 +226,8 @@ $(document).ready(function () {
 
                                     for (var k = 0; k < p; k++) {
                                         //$('#div_resp' + p).on(function () {
-                                            $('div .checkbox').click(function () {
-                                                checkedState = $(this).attr('checked');
+                                            $('.checkbox'+k).click(function () {
+                                                var checkedState = $(this).attr('checked');
                                                 $(this).parent('div').children('.checkbox:checked').each(function () {
                                                     $(this).attr('checked', false);
                                                 });
