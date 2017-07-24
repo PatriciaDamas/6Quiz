@@ -43,6 +43,7 @@ $(document).ready(function () {
                             console.log(cont)
                             content += '<tr><td>' + cont + '</td><td>' + data.nome_utilizador + '</td><td>' + data.pontuacao_utilizador + '</td><td>' + data.nome_jogo + '</td><tr>'
                         });
+                        $("#div_tipoJogo").append(content + ' </tbody></table></div><div class="col-sm-2"></div></div>');
                     });
                 });
             }
